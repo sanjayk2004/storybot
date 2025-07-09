@@ -7,6 +7,7 @@ function randomValueFromArray(array) {
   return array[index];
 }
 
+// Story template
 const storyTemplate = ":insertx: woke up one morning and decided it was time to become a hero. \
 They grabbed a backpack, left their house in :inserty:, and began an unforgettable journey. \
 Along the way, they encountered a giant who :insertz:, but they managed to escape. \
@@ -17,26 +18,22 @@ const insertY = ["Maple Town", "Cyber City", "Whispering Woods"];
 const insertZ = ["challenged them to a riddle contest", "sneezed fireballs", "offered them a glowing sword"];
 
 function generateStory() {
-  let storyText = storyTemplate;
+  let newStory = storyTemplate;
 
   const x = randomValueFromArray(insertX);
   const y = randomValueFromArray(insertY);
   const z = randomValueFromArray(insertZ);
 
-  storyText = storyText.replace(/:insertx:/g, x);
-  storyText = storyText.replace(/:inserty:/g, y);
-  storyText = storyText.replace(/:insertz:/g, z);
-
+  newStory = newStory.replace(":insertx:", x);
+  newStory = newStory.replace(":inserty:", y);
+  newStory = newStory.replace(":insertz:", z);
 
   if (customName.value.trim() !== '') {
-    storyText = storyText.replace("Bob", customName.value.trim());
+    newStory = newStory.replace("Bob", customName.value.trim());
   }
 
-
-  story.textContent = storyText;
+  story.textContent = newStory;
   story.style.visibility = 'visible';
 }
 
-if (randomize) {
-  randomize.addEventListener('click', generateStory);
-}
+randomize.addEventListener('click', generateStory);

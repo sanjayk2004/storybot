@@ -7,7 +7,6 @@ function randomValueFromArray(array) {
   return array[index];
 }
 
-// Story template
 const storyTemplate = ":insertx: woke up one morning and decided it was time to become a hero. \
 They grabbed a backpack, left their house in :inserty:, and began an unforgettable journey. \
 Along the way, they encountered a giant who :insertz:, but they managed to escape. \
